@@ -1,0 +1,12 @@
+{
+  "name": "my-seed-ap",
+  "version": "0.1.0",
+  "description": "My Seed App",
+  "dependencies": {
+    "zepto": "^1.1.6",
+    "underscore": "^1.8.3",
+    "requirejs": "^2.2.0",
+    "pure": "^0.6.0",
+    "slideout.js": "https://github.com/mango/slideout.git#^0.1.12"
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Browser -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Borwser & Cordova -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <!-- Cordova -->
+  <!-- gap: required for iOS, gstatic: needed for Android TalkBack
+       inline JS disabled by default
+    -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- Cordova: default css: grey background, all caps font -->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Example</title>
+</head>
+<body>
+  <div id="size-checker" style="position:absolute;width:1024px;height:600px;border-color:red;border-style:solid;border-width:2px;">
+    Galaxy Tab Lite 1024x600
+  </div>
+  <main class="app">
+    <header class="header">
+      <button class="sideMenu-button">☰</button>
+      <div class="header-main">
+        <h3 class="headerMain-h3">Example</h3>
+      </div>
+    </header>
+  </main>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/lib/require.js" data-main="js/main"></script>
+</body>
+</html>
