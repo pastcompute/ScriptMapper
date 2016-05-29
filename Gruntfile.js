@@ -2,20 +2,25 @@ module.exports = (function () {
   'use strict';
   return function (grunt) {
     require('load-grunt-tasks')(grunt);
-
     var config = {
       src: 'app'
     };
-
+    grunt.loadNpmTasks('grunt-build-gh-pages');
     grunt.initConfig({
       config: config,
+      buildGhPages: {
+        options: {
+        },
+        gh_pages: {
+        },
+      },
       jshint: {
         options: {
           jshintrc: '.jshintrc',
           reporter: require('jshint-stylish')
         },
         gruntfile: 'Gruntfile.js',
-        src: ['<%= config.src %>/js/**/*.js', '!<%= config.src %>/js/templates.js']
+        src: ['<%= config.src %>/js/*.js', '!<%= config.src %>/js/templates.js']
       },
       copy: {
         libs: {
@@ -74,5 +79,9 @@ module.exports = (function () {
         }
       }
     });
+    grunt.registerTask("publish", [
+          'copy',
+          'buildGhPages:gh_pages'
+      ]); 
   };
 })();

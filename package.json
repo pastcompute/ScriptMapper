@@ -4,6 +4,7 @@
   "description": "My Seed App",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-build-gh-pages": "^1.0.5",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "jsdoc": "^3.4.0",
