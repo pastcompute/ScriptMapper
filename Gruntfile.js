@@ -28,20 +28,47 @@ module.exports = (function () {
             filter: 'isFile',
             src: ['/requirejs/require.js',
                   '/underscore/underscore-min.js',
-                  '/zepto/zepto.min.js'],
-            dest: 'www/js/lib/'
+                  '/source-map/dist/source-map.min.js',
+                  '/dynatable/jquery.dynatable.js'
+                  ],
+            dest: 'www/js/vendor/'
+          },
+          {
+            cwd: 'bower_components/',
+            nonull: true,
+            flatten: true,
+            expand: true,
+            filter: 'isFile',
+            src: ['/dynatable/jquery.dynatable.css'
+                  ],
+            dest: 'www/css'
           }
           ]
         },
-        pure: {
+        foundation: {
           files:[
           {
-            cwd: 'bower_components/pure',
+            cwd: 'bower_components/',
             expand: true,
             nonull: true,
             flatten: true,
-            src: '**/*.css',
-            dest: 'www/css/pure/'
+            filter: 'isFile',
+            src: ['/foundation-sites/dist/foundation.min.js',
+                  '/foundation-sites/dist/plugins/foundation.abide.js',
+                  '/jquery/dist/jquery.min.js',
+                  '/jquery-validation/dist/jquery.validate.min.js',
+                  '/what-input/what-input.min.js'
+                  ],
+            dest: 'www/js/vendor/'
+          },
+          {
+            cwd: 'bower_components/',
+            expand: true,
+            nonull: true,
+            flatten: true,
+            filter: 'isFile',
+            src: '/foundation-sites/dist/foundation.min.css',
+            dest: 'www/css/'
           }
           ]
         }

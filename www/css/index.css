@@ -1,108 +1,39 @@
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+
+.demoZ { 
+  background-color: yellow;
 }
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    /* font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif; */
-    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
-    font-size:1.1em; /* 12px;*/
-    height:100%;
-    margin:0px;
-    padding:0px;
-    /* text-transform:uppercase; */
-    width:100%;
+meta.foundation-data-attribute-namespace {
+    font-family: false;
 }
 
-/* Portrait layout (default) */
-.appExample {
+textarea {
+  font-size: 0.6em;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .appExample {
-    }
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
-
-/* ~~~ app main HTML ~~~ */
-.app {
+table {
+  display: block;
   width: 100%;
-  margin: 0 0;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
 }
-.header {
-  margin: 0 auto;
+
+table th {
+  font-weight: bold;
 }
-.sideMenu-button {
-  float:left;
-  font-size:1.8em;
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
 }
-.header {
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
 }
-.headerMain {
-  height: 32px;
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
 }
-.headerMain-h3 {
-  width:80%;
-  text-align:center;
-  margin:auto
-}
-#size-checker { display:none; }

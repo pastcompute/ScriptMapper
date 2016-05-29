@@ -1,37 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
 <head>
-  <!-- Browser -->
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
   <meta http-equiv="cleartype" content="on">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1, width=device-width">
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- Borwser & Cordova -->
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-  <!-- Cordova -->
-  <!-- gap: required for iOS, gstatic: needed for Android TalkBack
-       inline JS disabled by default
-    -->
+
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-  <!-- Cordova: default css: grey background, all caps font -->
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <title>Example</title>
+
+  <title>Javascript Source Map Decoder</title>
+  <link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 <body>
-  <div id="size-checker" style="position:absolute;width:1024px;height:600px;border-color:red;border-style:solid;border-width:2px;">
-    Galaxy Tab Lite 1024x600
+
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">ScriptMapper</li>
+      <li><a id="menu-about" data-open="modal-about">About</a></li>
+    </ul>
   </div>
-  <main class="app">
-    <header class="header">
-      <button class="sideMenu-button">☰</button>
-      <div class="header-main">
-        <h3 class="headerMain-h3">Example</h3>
+</div>
+
+<div class="row">
+  <div class="small-4 large-2 columns">
+  </div>
+  <div class="small-8 large-10 columns">
+    <form id="mainForm" data-abide="ajax">
+      <div class="row">
+        <div class="medium-4 columns end">
+          <label>Paste map file
+            <textarea id="mainInput-map" placeholder="Map file" rows="2" required ></textarea>
+          </label>
+        </div>
       </div>
-    </header>
-  </main>
+
+      <div class="row expanded" >
+        <div class="small-2 columns">
+          <label>Line
+            <input id="mainInput-line" type="text" required pattern="number" placeholder="Line number of error">
+          </label>
+          <small class="form-error">This field is required.</small>
+        </div>
+        <div class="small-2 columns">
+          <label>Column
+            <input id="mainInput-column" type="text" required pattern="number" placeholder="Column number of error">
+          </label>
+          <small class="form-error">This field is required.</small>
+        </div>
+        <div class="small-4 columns end">
+          <label>&nbsp;</label>
+          <button type="submit" id="mainBtn-search" class="success button" >Search</a>
+          <button type="submit" id="mainBtn-dump" class="button" >Dump</a>
+        </div>
+      </div>
+    </form>
+    <hr>
+    <div class="row ">
+      <div class="medium-8 columns end">
+        <div class="success callout">
+          <div class="input-group">
+            <span class="input-group-label">Min</span>
+            <input id="result-sourceMin" class="input-group-field" type="text" readonly>
+          </div>
+          <div class="input-group">
+            <span class="input-group-label">Source</span>
+            <input id="result-sourceFile" class="input-group-field" type="text" readonly>
+          </div>
+          <div class="input-group">
+            <span class="input-group-label">Line</span>
+            <input id="result-sourceLine" class="input-group-field" type="text" readonly>
+            <span class="input-group-label">Column</span>
+            <input id="result-sourceColumn" class="input-group-field" type="text" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="medium-8 columns end">
+        <div id="main-searchError" class="alert callout" style="display:none;"></div>
+      </div>
+    </div>
+
+    <div class="reveal" id="modal-about" data-reveal>
+      <h1>ScriptMapper</h1>
+      <p class="lead">Paste map file content and line/column of error message.</p>
+      <p>The Search button will return the original source, line and column.</p>
+      <p>The Dump button will dump the entire map in CSV in a new browser tab.</p>
+      <p>Created by <a href="https://twitter.com/pastcompute" target="_blank">@pastcompute</a></p>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="row">
+      <div class="medium-8 columns end">
+        <div id="main-resultSources" style="display:none;">
+          <table id="main-resultSourcesTable">
+            <thead>
+              <th>Source</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
   <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="js/lib/require.js" data-main="js/main"></script>
+  <script type="text/javascript" src="js/vendor/require.js" data-main="js/main"></script>
 </body>
 </html>

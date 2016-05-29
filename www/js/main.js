@@ -1,15 +1,22 @@
 'use strict';
 require.config({
   paths: {
-    zepto: '../js/lib/zepto.min',
-    underscore: '../js/lib/underscore-min'
+    jquery: '../js/vendor/jquery.min',
+    'jquery.dynatable': '../js/vendor/jquery.dynatable',
+    foundation: '../js/vendor/foundation.min',
+    'foundation.abide': '../js/vendor/foundation.abide',
+    underscore: '../js/vendor/underscore-min',
+    sourceMap: '../js/vendor/source-map.min'
   },
   shim: {
-    zepto: {
+    jquery: {
       exports: '$'
     },
+    'jquery.dynatable': ['jquery'],
+    foundation: ['jquery'],
+    'foundation.abide': ['foundation'],
     underscore: {
-      deps: ['zepto'],
+      deps: ['jquery'],
       exports: '_'
     }
   },
