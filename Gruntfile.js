@@ -2,18 +2,18 @@ module.exports = (function () {
   'use strict';
   return function (grunt) {
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-gh-pages');
     var config = {
       src: 'app'
     };
-    grunt.loadNpmTasks('grunt-build-gh-pages');
+    // Nope. Doesnt switch to a temporary folder to work! grunt.loadNpmTasks('grunt-build-gh-pages');
     grunt.initConfig({
       config: config,
-      buildGhPages: {
+      'gh-pages': {
         options: {
+          base: 'www'
         },
-        gh_pages: {
-          pull:false
-        },
+        src: ['**']
       },
       jshint: {
         options: {
@@ -80,9 +80,6 @@ module.exports = (function () {
         }
       }
     });
-    grunt.registerTask("publish", [
-          'copy',
-          'buildGhPages:gh_pages'
-      ]); 
+    grunt.registerTask("publish", ['copy', 'gh-pages']);
   };
 })();
