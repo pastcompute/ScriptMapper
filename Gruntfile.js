@@ -12,6 +12,7 @@ module.exports = (function () {
         options: {
         },
         gh_pages: {
+          pull:false
         },
       },
       jshint: {
