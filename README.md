@@ -13,6 +13,13 @@ provided by an end user.
 
 Alternatively, hit Dump to get a list of all mappings in the map file.
 
+### Build
+
+```
+npm i
+npx grunt publish
+```
+
 ### TODO
 
 * Drag and drop mapfile
