@@ -69,8 +69,8 @@ define([
         $("#main-searchError").text("Position Not Found");
         $("#main-searchError").show();
       } else {
-        $("#result-sourceColumn").val(found.line);
-        $("#result-sourceLine").val(found.column);
+        $("#result-sourceColumn").val(found.column);
+        $("#result-sourceLine").val(found.line);
         $("#result-sourceFile").val(found.source);
       }
     } catch (e) {
